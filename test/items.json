@@ -1,0 +1,14 @@
+{
+    "items":{
+        "raw":{
+            "logs": ["rough", "birch", "chestnut", "pine", "cedar", "oak", "ashenbark", "whitewood"],
+            "ores": ["copper", "tin", "iron", "titanium", "runite", "meteorite", "adamantium"],
+            "stones":["roughstone", "limestone", "sandstone","tavertine", "granite", "slate", "basalt", "marble"],
+            "fibers":["cotton", "flax", "hemp", "skyflower", "amberleaf", "sunflax","ghost hemp"],
+            "hides": ["scrap", "rugged", "thin", "meduim", "heavy", "robust", "thick", "relisient"]
+        },
+        "readymade":{
+            "food": ["canned beef",  "canned beans", "water bottle", "potato chips"]
+        }
+    }
+}

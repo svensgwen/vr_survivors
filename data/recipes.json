@@ -1,0 +1,11 @@
+{
+    "wooden_sword": {
+      "wood": 3,
+      "iron": 1
+    },
+    "stone_pickaxe": {
+      "wood": 2,
+      "stone": 3
+    }
+}
+  

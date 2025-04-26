@@ -1,0 +1,54 @@
+{
+    "biomes":{
+        "forests":{
+            "lymhurst":{
+                "tier": 1,
+                "description": "",
+                "items":[]
+            },
+            "ferndell":{
+                "tier": 3,
+                "description": "",
+                "items":[]
+            },
+            "birchrest":{
+                "tier": 4,
+                "description": "",
+                "items":[]
+            },
+            "caerleon":{
+                "tier": 6,
+                "description": "",
+                "items":[]  
+            }
+        },
+        "mountains":{
+            "fort_sterling":{
+                "tier": 1,
+                "description": "",
+                "items": []
+            }
+        },
+        "highlands":{
+            "martlock":{
+                "tier": 1,
+                "description": "",
+                "items": []
+            }
+        },
+        "steppes":{
+            "bridgewatch":{
+                "tier": 1,
+                "description": "",
+                "items": []
+            }
+        },
+        "swamps":{
+            "thetford":{
+                "tier": 1,
+                "description": "",
+                "items": []
+            }
+        }
+    }
+}

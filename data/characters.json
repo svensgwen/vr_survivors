@@ -1,0 +1,30 @@
+{
+    "person_01":{
+        "img": "./assets/img/ppl/sven.png",
+        "fname": "sven",
+        "lname": "marx",
+        "health": 100,
+        "intelligence": 56,
+        "attack": 10,
+        "speed": 10,
+        "money": 100,
+        "carry_weight": "30kg",
+        "role": "hunter",
+        "wears":{
+            "head": "mistwalkers_hood",
+            "main_hand": "",
+            "short_hand": "",
+            "torso":"mistwalkers_leather_armour",
+            "legs": "",
+            "foot": ""
+        },
+        "inventory": {
+            
+        },
+        "description": "Sven is a hunting contractor, he also have knowledge about surviving the woods.",
+        "friends":["gwen"],
+        "relations":{
+
+        }
+    }
+}

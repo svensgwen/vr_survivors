@@ -1,0 +1,13 @@
+{
+    "roles":{
+        "hunter":{
+            "description": "This is some description"
+        },
+        "skinner":{
+            "description": "This is some description",
+            "stats":{
+
+            }
+        }
+    }
+}

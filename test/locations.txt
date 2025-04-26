@@ -1,0 +1,310 @@
+-- MEAREPOOLS --
+Thetford
+Windripple fen
+Downhorse
+Murky fen
+Chillhag
+Swamp Cross
+Stink Hag
+Fog fen
+Dewleaf fen
+Wispwhisper marsh
+Wanderlure Basin
+Slithertail marsh
+Dusktree Swamp
+Darkground Swamp
+Camlann
+Anklesnag Mire
+Stumprot Swamp
+Bowscale Fell
+Bonepool marsh
+
+{
+  "Steppe": {
+    "City": "Bridgewatch",
+    "Regions": [
+      "Dryvein Oasis",
+      "Sandrift Prairie",
+      "Scorched Heath",
+      "Sun Dune Desert",
+      "Broken Ash",
+      "Dawlish",
+      "Teign",
+      "Alosgath",
+      "Sutherland"
+    ],
+    "Resources": ["Hide", "Fiber", "Ore"]
+  },
+  "Mountain": {
+    "City": "Fort Sterling",
+    "Regions": [
+      "Iceburn Peaks",
+      "Frostpeak Ascent",
+      "Snowvein Tundra",
+      "Crystal Snowfield",
+      "Hailstone Plateau",
+      "Cullin",
+      "Northern Cullin Range"
+    ],
+    "Resources": ["Ore", "Stone", "Fiber"]
+  },
+  "Forest": {
+    "City": "Lymhurst",
+    "Regions": [
+      "Willow Wood",
+      "Birchcopse Hollow",
+      "Mossdale",
+      "Greendale",
+      "Pinecopse",
+      "Halther",
+      "Keilder",
+      "Dyfed",
+      "Gwynedd"
+    ],
+    "Resources": ["Wood", "Hide", "Stone"]
+  },
+  "Highland": {
+    "City": "Martlock",
+    "Regions": [
+      "Highstone Hill",
+      "Stonetop Pass",
+      "Greyrock Quarry",
+      "Granitecliff",
+      "Rockridge Mountains",
+      "Brecon",
+      "Wold",
+      "Ayr",
+      "Powys"
+    ],
+    "Resources": ["Stone", "Ore", "Wood"]
+  },
+  "Swamp": {
+    "City": "Thetford",
+    "Regions": [
+      "Marshes of Madness",
+      "Murkwash",
+      "Boghaven",
+      "Swamp Cross",
+      "Fennmoor",
+      "Broadmarsh",
+      "Wetlands"
+    ],
+    "Resources": ["Fiber", "Wood", "Hide"]
+  },
+  "Misc": {
+    "City": "Caerleon",
+    "Regions": [
+      "Arthur's Rest",
+      "Morgana's Rest",
+      "Merlyn's Rest",
+      "Avalon Roads"
+    ]
+  }
+}
+
+
+
+🌿 Mystical & Ethereal
+
+    Elarion – Realm of forgotten gods and moonlight
+
+    Syltheria – Whispers in the woods, veils of magic
+
+    Myndara – Land shaped by dreams and arcane storms
+
+    Nytheris – Where time bends, and stars fall
+
+    Zarenthae – Crystalline cities and floating spires
+
+🛡️ Classic & Regal
+
+    Aureland – Golden age continent of knights and kingdoms
+
+    Valmere – Dignified and rich in culture
+
+    Cindrosia – Grand cities, ruined glories
+
+    Norvallis – Cold, noble, and iron-hearted
+
+    Tenebros – The shadowed realm, always on the brink
+
+
+
+
+🌙 Mystic & Ethereal Continent Names – Volume II
+
+    Aetherwyn – Where the veil between realms grows thin
+
+    Solvanar – Bathed in eternal twilight, moons never sleep
+
+    Lytheral – Drifting forests and spirits that hum in the leaves
+
+    Virellith – Covered in soft mists and sentient blooms
+
+    Orynthia – Songs echo in the stones, even time forgets this place
+
+    Naelorith – Shimmering plains under skies of liquid opal
+
+    Selun’kai – The "Sea of Stars" in ancient tongue
+
+    Myrraveil – Hidden behind veils of illusion and mirrored lakes
+
+    Thessalara – A place where magic grows wild and dreams take root
+
+    Aevyris – Woven from silence and silver flame
+
+    Nymbrala – Floating archipelagos, drifting through a sky-ocean
+
+    Caldrevia – The cradle of forgotten gods
+
+    Ithrenae – Every step echoes through forgotten aeons
+
+    Velun’thir – Home of the last starborn
+
+    Liorenth – Light-drenched groves where time itself naps
+
+
+
+
+🌌 Mystic & Ethereal Continent Names – Volume III
+
+    Elyrion – A land suspended between light and memory
+
+    Xantheris – Glows faintly with forbidden, sacred knowledge
+
+    Vastrael – Windswept highlands where gods once wept
+
+    Zephyrae – Skyborn realm where the clouds bow low
+
+    Niravaleth – Surreal and luminous, like a living dream
+
+    Serathune – Known in legend as the place where time began
+
+    Alunyth – Covered in crystalline gardens and twilight ruins
+
+    Ilyros – Feels like déjà vu wrapped in moonlight
+
+    Kirelyth – Hidden in folds of time, untouched by war
+
+    Thirelys – Echoes with lullabies sung by stars
+
+    Qirevan – A realm that exists only when you believe it
+
+    Ylvareth – Forests that shimmer with thought and soul
+
+    Auralen – Where every mountain hums with an ancient chord
+
+    Naevrynth – The name is older than fire; its meaning, lost
+
+    Talen’raei – A drifting, radiant dream wrapped in mist and myth
+
+    Epheryal – Like a reflection of a world that never was
+
+
+================================================= BIOMES N REGIONS ======================================================
+
+🌲 Forest Biome – Lush, Whispering, Enchanted
+
+    Silvarath – The eternal green
+
+    Thornveil – Cloaked in bramble and secrets
+
+    Elarwyn Woods – Where light is filtered through memory
+
+    Myrrgrove – Hallowed trees that remember
+
+    Virethorn Wilds – Wild and half-sentient
+
+    Yll'fen – Elven echoes and moss-draped paths
+
+🏔️ Mountain Biome – Cold, Cragged, Towering
+
+    Drakspire Range – Tall enough to stab the sky
+
+    Karradûn – Bones of the world, older than the gods
+
+    Frostmourn Peaks – Haunted by howling winds
+
+    Tharnok’s Crown – Rumored to house the sleeping colossus
+
+    Ironhold Cliffs – Unyielding stone, eternal watch
+
+    Velkarth Divide – Divides fate and fury
+
+🪨 Highland Biome – Windy, Stony, Rolling Might
+
+    Caelwyn Reaches – Windswept and noble
+
+    Braemor Heights – Highland clans still chant war songs here
+
+    Stoneweld Rise – Earth forged in silence
+
+    Galdran Moors – Echoes and spirits walk free
+
+    Eron Vale – The heartland of lost kings
+
+    Ashvar Plateau – Burnt once, proud still
+
+🌾 Savannah Biome – Wide, Dry, Boundless
+
+    Serathi Plains – Endless golden breath of the earth
+
+    The Redhollow – Blood was spilled here, and remembered
+
+    Duskwind Expanse – The sky kisses everything
+
+    Vaelor – For wanderers and warriors alike
+
+    Orrenreach – Where the stars feel closer
+
+    Zhurak Flats – Treacherous in silence
+
+🐸 Swamp Biome – Murky, Ancient, Breathing Decay
+
+    Blackmere – Still waters, deep secrets
+
+    Fennmire – The land that swallows sound
+
+    Grimglen Fen – Thick with curse and creature
+
+    Mor'vassa Bogs – Toxic beauty and dying sun
+
+    Whisperrot – You never leave the same
+
+    Sullenreach – Damp and dreamlike, yet cruel
+
+
+🏔️ What Are Highlands?
+
+Definition:
+Highlands are elevated regions that are higher than surrounding land but not as extreme or rugged as full-on mountains. Think rolling hills, steep cliffs, misty moors, rocky ridges—majestic but livable.
+🌍 IRL Examples:
+
+    Scottish Highlands – Misty, romantic, windblown cliffs and heather
+
+    Ethiopian Highlands – Lush plateaus with dramatic drop-offs
+
+    Tibetan Plateau – Called “The Roof of the World,” vast and spiritual
+
+🧭 Biome Features:
+
+    Terrain: Rolling hills, cliffs, stone formations, grass and shrubs
+
+    Climate: Cool to temperate; lots of fog, wind, and drama
+
+    Fauna: Eagles, goats, wolves—creatures built for endurance
+
+    Mood: Ancient. Windswept. Lonely but strong.
+
+    Civilizations: Highland clans, shepherd tribes, stone fortresses
+
+🌫️ Fantasy Vibes:
+
+    A place for old souls and lost relics
+
+    Drinking songs echo across the cliffs
+    
+    Worn paths carved by war and pilgrimage
+
+    Feels like the land is watching you back
+

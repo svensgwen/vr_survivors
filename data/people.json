@@ -1,0 +1,29 @@
+{
+    "person_06": {
+        "fname": "gwen",
+        "lname": "stacy",
+        "health": 100,
+        "intelligence": 65,
+        "attack": 10,
+        "speed": 10,
+        "money": 100,
+        "carry_weight": "36kg",
+        "role": "skinner",
+        "inventory": {
+            "music_player": 1,
+            "canned_beans": 10,
+            "battery_aaa": 20,
+            "earphone": 1,
+            "audio_splitter": 1,
+            "soldering_iron": 2,
+            "soldering_wax": 1,
+            "electronic_board": 5,
+            "electrical_tape": 3
+        },
+        "description": "Gwen worked in telecalling sector for electronics company, but she is also a athlete , and also smart",
+        "friends":["sven"],
+        "relations":{
+            
+        }
+    }
+}

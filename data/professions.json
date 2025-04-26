@@ -1,0 +1,6 @@
+{
+    "gatherer":["fisherman", "ore_miner", "lumberjack", "animal_skinner", "fiber_harvester", "quarrier"],
+    "stores_person":["toolmaker", "saddler", "workbench", "warriors_forge", "mages_tower", "hunters_lodge"],
+    "cooks":["alchemist", "cook"],
+    "harvester":["herbalist", "farmer", "animal_breeder"]
+}

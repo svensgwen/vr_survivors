@@ -1,0 +1,54 @@
+{
+    "raw":{
+        "logs":{
+            "rough_log":{
+                "exp":1,
+                "price":3,
+                "weight": "0.2kg",
+                "rarity": 1
+            },
+            "birch_log":{
+                "exp": 3,
+                "price": 9,
+                "weight": "0.3kg",
+                "rarity": 2
+            },
+            "chestnut_log":{
+                "exp": 5,
+                "price": 13,
+                "weight": "0.5kg",
+                "rarity": 3
+            },
+            "pine_log":{
+                "exp": 7,
+                "price": 15,
+                "weight": "0.7kg",
+                "rarity": 5
+            },
+            "cedar_log":{
+                "exp": 12,
+                "price": 17,
+                "weight": "0.9kg",
+                "rarity": 6
+            },
+            "oak_log":{
+                "exp": 15,
+                "price": 22,
+                "weight": "1.2kg",
+                "rarity": 7
+            },
+            "ashenbark_log":{
+                "exp": 19,
+                "price": 26,
+                "weight": "1.5kg",
+                "rarity": 8
+            },
+            "whitewood_log":{
+                "exp": 25,
+                "price": 33,
+                "weight": "1.9kg",
+                "rarity": 9
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "stores":{
+        "toolmaker":{
+            "siege_hammer":{},
+            "bag":{},
+            "cape":{},
+            "axe":{},
+            "stone_hammer":{},
+            "picaxe":{},
+            "sickle":{},
+            "skinning_knife":{},
+            "fishing_rod":{}
+        },
+        "alchemist":{},
+        "cook":{},
+        "saddler":{},
+        "workbench":{},
+        "warriors_forge":{
+            "battleaxe":{
+
+            },
+            "broadsword":{
+
+            },
+            "hammer":{
+
+            },
+            "mace":{
+
+            },
+            "crossbow":{
+
+            },
+            "sheild":{
+
+            },
+            "soldier_helmet":{
+
+            },
+            "soldier_armour":{
+
+            },
+            "soldier_boots":{
+                
+            }
+        },
+        "mages_tower":{
+            "fire_staff":{
+
+            },
+            "arcane_staff":{
+
+            },
+            "holy_staff":{
+
+            },
+            "cursed_staff":{
+
+            },
+            "frost_staff":{
+
+            },
+            "tome":{
+
+            },
+            "scholar_cowl":{
+
+            },
+            "scholar_robe":{
+
+            },
+            "scholar_sandals":{
+
+            }
+        },
+        "hunters_lodge":{
+            "bow":{
+
+            },
+            "dagger":{
+
+            },
+            "quarterstaff":{
+
+            },
+            "naturestaff":{
+
+            },
+            "spear":{
+
+            },
+            "torch":{
+
+            },
+            "mercenary_hood":{
+
+            },
+            "mercenary_jacket":{
+
+            },
+            "mercenary_shoes":{
+
+            }
+        }
+    }
+}
