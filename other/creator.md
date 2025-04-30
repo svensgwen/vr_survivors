@@ -11,6 +11,25 @@
 
 # Locations
 
+## Continents
+- norvallis - Savannah 🌾
+- duskwind expanse - Savannah 🌾
+- orynthia - Mountains 🏔️
+- auralen - Mountains 🏔️
+- galwyn wilds- Forests 🌲
+- cindrosia - Forests 🌲
+- rongrove - Forests 🌲
+- blackmere - Swamps 🐸
+- slytheria - Swamps 🐸
+
+
+## Citites
+- Galwyn
+    - fort rowen
+    - yenfey
+    - eronvale
+    - nytheris
+
 Mountains (BLYN BRAE)
 - Fort Sterling
 - Bryn Gorge
