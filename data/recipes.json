@@ -1,11 +1,7 @@
 {
-    "wooden_sword": {
-      "wood": 3,
-      "iron": 1
-    },
-    "stone_pickaxe": {
-      "wood": 2,
-      "stone": 3
-    }
+    "Stone Pickaxe": {"Wood": 2, "Stone": 3},
+    "Wooden Sword": {"Wood": 3, "Iron": 1},
+    "Health Potion": {"Herb": 2, "Water": 1},
+    "Torch": {"Wood": 1, "Coal": 1}
 }
   

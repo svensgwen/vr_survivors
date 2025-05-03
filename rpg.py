@@ -18,12 +18,26 @@ def seperator():
 
 
 # ---------------------------------------------------- CONSTANTS ----------------------------------------------------
+USER_DATA = "user.dat"
+
 
 HPMAX = 6000
 ATKMAX = 600
 
 
 # ---------------------------------------------------- VARIABLES ----------------------------------------------------
+
+game = {
+    "name": "",
+    "hp": 600,
+    "atk": 35,
+    "potion": 1,
+    "elixir": 0,
+    "gold": 0,
+    "x": 0,
+    "y": 0,
+    "key": False
+}
 
 hp = 600
 atk = 35
@@ -62,78 +76,54 @@ MAP = [
 Y_LEN = len(MAP)-1
 X_LEN = len(MAP[0])-1
 
-biome = {
-    "plains": {
-        "text": "PLAINS",
-        "enemies": True},
-    "forest": {
-        "text": "WOODS",
-        "enemies": True},
-    "fields": {
-        "text": "FIELDS",
-        "enemies": False},
-    "bridge": {
-        "text": "BRIGE",
-        "enemies": True},
-    "town": {
-        "text": "TOWN CENTRE",
-        "enemies": False},
-    "shop": {
-        "text": "SHOP",
-        "enemies": False},
-    "mayor": {
-        "text": "MAYOR",
-        "enemies": False},
-    "cave": {
-        "text": "CAVE",
-        "enemies": False},
-    "mountain": {
-        "text": "MOUNTAIN",
-        "enemies": True},
-    "hills": {
-        "text": "HILLS",
-        "enemies": True,
-    }
+BIOMES = {
+    "plains":    {"text": "PLAINS",       "enemies": True},
+    "forest":    {"text": "WOODS",        "enemies": True},
+    "fields":    {"text": "FIELDS",       "enemies": False},
+    "bridge":    {"text": "BRIDGE",       "enemies": True},
+    "town":      {"text": "TOWN CENTRE",  "enemies": False},
+    "shop":      {"text": "SHOP",         "enemies": False},
+    "mayor":     {"text": "MAYOR",        "enemies": False},
+    "cave":      {"text": "CAVE",         "enemies": False},
+    "mountain":  {"text": "MOUNTAIN",     "enemies": True},
+    "hills":     {"text": "HILLS",        "enemies": True}
 }
 
 # ------------------------------------------------------ ENEMIES ------------------------------------------------------
 
-e_list = ["goblin", "orc", "slime"]
+ENEMY_LIST = ["goblin", "orc", "slime"]
 
-mobs = {
-    "goblin": {
-        "hp": 370,
-        "atk": 30,
-        "gold": 8
-    },
-    "orc": {
-        "hp": 480,
-        "atk": 50,
-        "gold": 18
-    },
-    "slime": {
-        "hp": 100,
-        "atk": 20,
-        "gold": 12
-    },
-    "dragon": {
-        "hp": 999,
-        "atk": 80,
-        "gold": 600
-    }
+MOBS = {
+    "goblin": {"hp": 370, "atk": 30, "gold": 8},
+    "orc":    {"hp": 480, "atk": 50, "gold": 18},
+    "slime":  {"hp": 100, "atk": 20, "gold": 12},
+    "dragon": {"hp": 999, "atk": 80, "gold": 600}
 }
 
+# ------------------------------------------------------ FUNCTIONS ------------------------------------------------------
+
 def save():
-    list = [
-        name, str(hp), str(atk), str(potion), str(elixir), str(gold), str(x), str(y), str(key)
-    ]
-
-    file = open("load.txt", "w")
-
+    list = [name, str(hp), str(atk), str(potion), str(elixir), str(gold), str(x), str(y), str(key)]
+    file = open(USER_DATA, "w")
     for item in list:
         file.write(item + "\n")
     file.close()
 
+def load_game():
+    try:
+        with open(USER_DATA, "r") as f:
+            data = f.read().strip().splitlines()
+            keys = list(game.keys())
+            for i in range(len(data)):
+                if keys[i] == "key":
+                    game[keys[i]] = data[i] == "True"
+                elif keys[i] in ["hp", "atk", "potion", "elixir", "gold", "x", "y"]:
+                    game[keys[i]] = int(data[i])
+                else:
+                    game[keys[i]] = data[i]
+            return True
+    except Exception:
+        return False
 
 def heal(amount):
     global hp
@@ -148,13 +138,13 @@ def battle():
     global fight, play, run, hp, potion, elixir, gold, boss
 
     if not boss:
-        enemy = random.choice(e_list)
+        enemy = random.choice(ENEMY_LIST)
     else:
         enemy = "Dragon"
-    enemy_hp = mobs[enemy]["hp"]
+    enemy_hp = MOBS[enemy]["hp"]
     enemy_hpmax = enemy_hp
-    enemy_atk = mobs[enemy]["atk"]
-    enemy_gold = mobs[enemy]["gold"]
+    enemy_atk = MOBS[enemy]["atk"]
+    enemy_gold = MOBS[enemy]["gold"]
 
     while fight:
         clear_screen()
@@ -346,31 +336,34 @@ while run:
             name = input("# What's your name, adventurer? |:")
             menu = False
             play = True
+
         elif choice == "2":
             try:
-                f = open("load.txt", "r")
-                load_list = f.readlines()
-                if len(load_list) == 9:
-                    name = load_list[0][:-1]
-                    hp = int(load_list[1][:-1])
-                    atk = int(load_list[2][:-1])
-                    potion = int(load_list[3][:-1])
-                    elixir = int(load_list[4][:-1])
-                    gold = int(load_list[5][:-1])
-                    x = int(load_list[6][:-1])
-                    y = int(load_list[7][:-1])
-                    key = bool(load_list[8][:-1])
+                with open(USER_DATA, "r") as f:
+                    data = [line.strip() for line in f.readlines()]
+                if len(data) == 9:
+                    name = data[0]
+                    hp = int(data[1])
+                    atk = int(data[2])
+                    potion = int(data[3])
+                    elixir = int(data[4])
+                    gold = int(data[5])
+                    x = int(data[6])
+                    y = int(data[7])
+                    key = data[8] == "True"
+                    
                     clear_screen()
-                    print("Welcome back, " + name + "!")
+                    print(f"Welcome back, {name}!")
                     input("> ")
                     menu = False
                     play = True
                 else:
                     print("Corrupt save file!")
                     input("> ")
-            except OSError:
+            except FileNotFoundError:
                 print("No loadable save file!")
                 input("> ")
+                
         elif choice == "3":
             rules = True
         elif choice == "4":
@@ -381,14 +374,14 @@ while run:
         clear_screen()
 
         if not standing:
-            if biome[MAP[y][x]]["enemies"]:
+            if BIOMES[MAP[y][x]]["enemies"]:
                 if random.randint(0, 100) < 30:
                     fight = True
                     battle()
 
         if play:
             seperator()
-            print("LOCATION: " + biome[MAP[y][x]]["text"])
+            print("LOCATION: " + BIOMES[MAP[y][x]]["text"])
             seperator()
             print("NAME: " + name)
             print("hp: " + str(hp) + "/" + str(HPMAX))

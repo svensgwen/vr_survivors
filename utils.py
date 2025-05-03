@@ -4,6 +4,8 @@ import json
 import random
 import subprocess
 from alive_progress import alive_bar
+from rich.console import Console
+console = Console()
 
 # Clears screen based on OS
 def clear_screen():
@@ -12,7 +14,9 @@ def clear_screen():
 
 # Pause before clearing the screen
 def pause():
-    input("\nPress Enter to continue...")
+    console.print("\n[bold blue]Press [green]Enter[/green] to continue...[/bold blue]", end="")
+    input()
+
 
 def rand_int(INT=10):
     return random.randint(1, INT)
@@ -27,7 +31,7 @@ def open_image(IMAGE_PATH):
     subprocess.run(["xdg-open", IMAGE_PATH])
 
 def seperator():
-    print("xX--_________________----------------------___________________ --Xx")
+    print("xX--_________________---------o.O----------___________________ --Xx")
 
 # =========================
 #       JSON Handlers

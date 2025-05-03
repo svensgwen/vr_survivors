@@ -2,8 +2,10 @@
 # ==================================================================================================================
 #                                                   PYTHON IMPORTS                                                  |
 # ==================================================================================================================
+
 import os
 import random
+
 # ==================================================================================================================
 #                                                   EXTERNAL IMPORTS                                                |
 # ==================================================================================================================
@@ -15,6 +17,7 @@ console = Console()
 # ==================================================================================================================
 #                                                   CUSTOM IMPORTS                                                  |
 # ==================================================================================================================
+
 from utils import clear_screen, seperator
 
 # ---------------------------------------------------- CONSTANTS ----------------------------------------------------
@@ -26,19 +29,19 @@ TIMEFORMAT = ["simple", "advanced"]
 
 # NOTE - World Map shows continents
 WORLD_MAP = [
-         #     x = 0               x = 1                  x = 2
-         ["nytheris",           "auralen",          "cindrosia"],           # y = 0
-         ["galwyn wilds",     "norvallis",           "orynthia"],           # y = 1
-         ["blackmere",        "slytheria",           "eronvale"]            # y = 2
+         #     x = 0                          x = 1                x = 2
+         ["norvallis",           "duskwind expanse",          "orynthia"],           # y = 0
+         ["auralen",                 "galwyn wilds",         "cindrosia"],           # y = 1
+         ["rongrove",                   "blackmere",         "slytheria"]            # y = 2
 ]
 
 GALWYN = [
         # 
         [""], # y = 0
-        [], # y = 1
-        ["fort rowen", "yenfey"], # y = 2
-        [], # y = 3
-        [], # y = 4
+        [    "pen gent",     "pen garn",        "pen uchaf",       "bryn gorge",         "mavar gorge",      "pen kerrig"], # y = 1
+        [      "yenfey",     "eronvale",         "nytheris",       "fort rowen",        "cairn camain",    "cairin fidar"], # y = 2
+        [ "cairin gorm", "cairin cloch",  "cairin glascore",       "cairn darg",          "creag dhor",      "creag garr"], # y = 3
+        [  "creag morr", "creag meagir",     "",  "sterling"], # y = 4
         []  # y = 5
 ]
 
