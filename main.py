@@ -1,101 +1,108 @@
-
-# ==================================================================================================================
-#                                                   PYTHON IMPORTS                                                  |
-# ==================================================================================================================
-
 import os
-import random
+import customtkinter as ctk
+from PIL import Image, ImageTk
 
-# ==================================================================================================================
-#                                                   EXTERNAL IMPORTS                                                |
-# ==================================================================================================================
+class PlayerBar(ctk.CTkFrame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.configure(height=80, fg_color="#222")
+        self.pack(side="bottom", fill="x", padx=10, pady=5)
 
-from rich.console import Console
+        # Load and resize avatar image with smooth scaling
+        avatar_img = Image.open("assets/img/gwen_premium.png").resize((160, 160), Image.LANCZOS)
+        self.avatar_photo = ImageTk.PhotoImage(avatar_img)
+        avatar_label = ctk.CTkLabel(self, image=self.avatar_photo, fg_color="#222", text="")
+        avatar_label.grid(row=0, column=0, padx=10, pady=10)
 
-console = Console()
+        # Vertical layout frame for bars
+        bars_frame = ctk.CTkFrame(self, fg_color="#222")
+        bars_frame.grid(row=0, column=1, rowspan=2, pady=10)
 
-# ==================================================================================================================
-#                                                   CUSTOM IMPORTS                                                  |
-# ==================================================================================================================
+        # Health
+        health_label = ctk.CTkLabel(bars_frame, text="Health:")
+        health_label.pack(anchor="w")
+        self.health_bar = ctk.CTkProgressBar(bars_frame, width=200)
+        self.health_bar.pack(pady=(0, 10))
+        self.health_bar.set(0.8)  # 80% health example
 
-from utils import clear_screen, seperator
+        # Energy
+        energy_label = ctk.CTkLabel(bars_frame, text="Energy:")
+        energy_label.pack(anchor="w")
+        self.energy_bar = ctk.CTkProgressBar(bars_frame, width=200)
+        self.energy_bar.pack()
+        self.energy_bar.set(0.5)  # 50% energy example
 
-# ---------------------------------------------------- CONSTANTS ----------------------------------------------------
+        self.grid_columnconfigure(2, weight=1)
 
-HPMAX = 6000
-ATKMAX = 600
+class GameWindow(ctk.CTk):
+    def __init__(self):
+        super().__init__()
 
-TIMEFORMAT = ["simple", "advanced"]
+        self.title("VR_SURVIVORS")
+        self.geometry("1600x900")
 
-# NOTE - World Map shows continents
-WORLD_MAP = [
-         #     x = 0                          x = 1                x = 2
-         ["norvallis",           "duskwind expanse",          "orynthia"],           # y = 0
-         ["auralen",                 "galwyn wilds",         "cindrosia"],           # y = 1
-         ["rongrove",                   "blackmere",         "slytheria"]            # y = 2
-]
+        # Main content frame with horizontal layout
+        main_frame = ctk.CTkFrame(self)
+        main_frame.pack(expand=True, fill="both", padx=10, pady=10)
 
-GALWYN = [
-        # 
-        [""], # y = 0
-        [    "pen gent",     "pen garn",        "pen uchaf",       "bryn gorge",         "mavar gorge",      "pen kerrig"], # y = 1
-        [      "yenfey",     "eronvale",         "nytheris",       "fort rowen",        "cairn camain",    "cairin fidar"], # y = 2
-        [ "cairin gorm", "cairin cloch",  "cairin glascore",       "cairn darg",          "creag dhor",      "creag garr"], # y = 3
-        [  "creag morr", "creag meagir",     "",  "sterling"], # y = 4
-        []  # y = 5
-]
+        # Left: Frame with grid of square buttons
+        actions_frame = ctk.CTkFrame(main_frame)
+        actions_frame.pack(side="left", fill="both", expand=True)
 
-MAP = [
-         #  x = 0       x = 1       x = 2       x = 3       x = 4       x = 5         x = 6
-        ["plains",   "plains",   "plains",   "plains",   "forest",  "mountain",        "cave"],     # y = 0
-        ["forest",   "forest",   "forest",   "forest",   "forest",     "hills",    "mountain"],     # y = 1
-        ["forest",   "fields",   "bridge",   "plains",    "hills",    "forest",       "hills"],     # y = 2
-        ["plains",     "shop",     "town",    "mayor",   "plains",     "hills",    "mountain"],     # y = 3
-        ["plains",   "fields",   "fields",   "plains",    "hills",  "mountain",    "mountain"],     # y = 4
-        ["forest",   "plains",   "plains",   "plains",    "forest", "mountain",    "mountain"],     # y = 5
-        ["fields",   "fields",   "fields",   "plains",    "hills",     "hills",       "hills"]      # y = 6
-    ]
-Y_LEN = len(MAP)-1
-X_LEN = len(MAP[0])-1
+        # Folder where images are stored
+        self.image_folder = "assets/img/actions"
+        # Define your actions and corresponding image filenames
+        self.actions = ["Attack", "Map", "Inventory", "Market", "Gather", "Fixit", "Save"]
+        self.image_files = ["attack.png", "map.png", "inventory.png", "market.png", "gather.png", "fixit.png", "save.png"]
 
-# ---------------------------------------------------- VARIABLES ----------------------------------------------------
+        def load_actions_images(image_folder, image_names, size=(90, 90)):
+            images = []
+            for name in image_names:
+                filepath = os.path.join(image_folder, name)
+                if os.path.exists(filepath):
+                    img = Image.open(filepath).resize(size, Image.LANCZOS)
+                    photo = ImageTk.PhotoImage(img)
+                else:
+                    photo = None  # fallback
+                images.append(photo)
+            return images
 
-player = {
-    "name": "galgor",
-    "health": 100,
-    "money": 1000000,
-    "current_location": "fort rowen"
-}
+        # Load images from folder
+        self.button_images = load_actions_images(self.image_folder, self.image_files, size=(50, 50))
 
-def main_menu():
-    game_menu()
+        # Create grid of square buttons (e.g., 6x6)
+        num_rows, num_cols = 6, 6
+        button_size = 90  # Size of each button
+
+        for i, action in enumerate(self.actions):
+            photo = self.button_images[i] if i < len(self.button_images) else None
+            btn = ctk.CTkButton(actions_frame, text=action, width=button_size, height=button_size,
+                                image=photo, compound="top")
+            r = i // num_cols
+            c = i % num_cols
+            btn.grid(row=r, column=c, padx=5, pady=5)
 
 
-def continue_game():
-    clear_screen()
-    game_menu()
 
-def game_menu():
-        print("\n")
-        console.print("🧬 [bold cyan] ========== V R SURVIVORS ========== [/bold cyan] 🧬 ")
-        console.print("[bold red]-------------------------------------------------------------[/bold red]")
-        console.print(f"[bold magenta]Name: {player['name']}[/bold magenta] \t [bold]|[/bold] [bold green]Health: {player['health']}[/bold green]  \t [bold]|[/bold] [bold]Money: [/bold][bold green]${player['money']}[/bold green]")
-        console.print("[bold red]-------------------------------------------------------------[/bold red]")
-        console.print(f"\t \t [bold cyan]LOCATION: {player['current_location']}[/bold cyan]")
-        console.print("[bold green]-------------------------------------------------------------[/bold green]")
-        console.print("1. 🔍 \t Scavenge")
-        console.print("2. 🏹 \t Hunt")
-        console.print("3. 🧰 \t Open Inventory")
-        console.print("4. 🛠️ \t Craft Item")
-        console.print("5. 🌅 \t Travel")
-        console.print("6. 🧱 \t Build")
-        console.print("7. 🛖 \t  Shelter")
-        console.print("8. 📜 \t Recipies")
-        console.print("9. 🏪 \t Store")
-        console.print("10. [bold green]🛈[/bold green] \t Player Info")
-        console.print("11. ❓ \t Help")
-        console.print("0. ❌ \t Exit")
-        console.print("(ENTER). ↩️ \t MAIN MENU")
+        # Right: Text box like command prompt
+        command_frame = ctk.CTkFrame(main_frame)
+        command_frame.pack(side="right", fill="both", expand=True, padx=(10, 0))
+
+        # Command prompt label
+        cmd_label = ctk.CTkLabel(command_frame, text="Command Prompt", font=ctk.CTkFont(size=16, weight="bold"))
+        cmd_label.pack(anchor="w", padx=5, pady=3)
+
+        # Text box
+        self.command_textbox = ctk.CTkTextbox(command_frame, width=300, height=400)
+        self.command_textbox.pack(expand=True, fill="both", padx=5, pady=5)
+
+        # Player bar at bottom (assuming previously defined)
+        self.player_bar = PlayerBar(self)
+        self.player_bar.pack(side="bottom", fill="x", padx=10, pady=5)
 
 if __name__ == "__main__":
-    main_menu()
+    ctk.set_appearance_mode("dark")  # "dark" or "light"
+    ctk.set_default_color_theme("dark-blue")  # Optional
+
+    app = GameWindow()
+    app.mainloop()
